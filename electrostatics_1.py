@@ -12,10 +12,11 @@ boundary conditions of the magnet.
 """
 
 import numpy as np
+import matplotlib
 from matplotlib import cm
 from math import sqrt, cos, pi
 import matplotlib.pyplot as plt
-
+matplotlib.use('TkAgg')
 
 # set magnet parameters
 # --------------------------------------------
@@ -98,14 +99,14 @@ while done == 'no':
             if err > tol:
                 done = 'no'
 
-print '\n','iterations = ',iters
+print('\n','iterations = ',iters)
 # --------------------------------------------
 
 
 # set contour levels for plotting
 phiMax = np.max(phi)
 levels = np.arange(0,int(phiMax),0.5)
-print 'max potential =',phiMax
+print('max potential =',phiMax)
 
 # build matrix for plotting full cross-section
 # this reflects matrix in all 4 quadrants
